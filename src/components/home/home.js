@@ -10,33 +10,13 @@ export default function Home() {
       : [
           {
             id: 1,
-            title: "Build Ui",
+            title: "Example Todo",
             description: "Lorem text",
             subtasks: [
-              { subtask_title: "SubtaskTitle 1", subtask_state: "todo" },
-              { subtask_title: "SubtaskTitle 2", subtask_state: "todo" },
+              { subtask_title: "Sub task 1", subtask_state: "todo" },
+              { subtask_title: "Sub task 2", subtask_state: "todo" },
             ],
             state: "todo",
-          },
-          {
-            id: 2,
-            title: "Build HTML cCSS",
-            description: "Lorem text",
-            subtasks: [
-              { subtask_title: "SubtaskTitle 1", subtask_state: "todo" },
-              { subtask_title: "SubtaskTitle 2", subtask_state: "todo" },
-            ],
-            state: "doing",
-          },
-          {
-            id: 3,
-            title: "PHP AND NODE",
-            description: "Lorem text",
-            subtasks: [
-              { subtask_title: "SubtaskTitle 1", subtask_state: "todo" },
-              { subtask_title: "SubtaskTitle 2", subtask_state: "todo" },
-            ],
-            state: "done",
           },
         ]
   );
