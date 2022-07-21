@@ -152,7 +152,12 @@ export default function Home() {
         <div className="todo col-md-4">
           <div className="title todo__title d-flex align-items-center">
             <div className="circle todo__circle"></div>
-            <p className="mb-0">Todo ({getNumberOfState("todo")[0]})</p>
+            <p className="mb-0">
+              Todo{" "}
+              <span className="todo__text">
+                ({getNumberOfState("todo")[0]})
+              </span>
+            </p>
           </div>
 
           {list.map((todo, index) => {
@@ -177,7 +182,12 @@ export default function Home() {
         <div className="doing col-md-4">
           <div className="title doing__title">
             <div className="circle doing__circle"></div>
-            <p className="mb-0">Doing ({getNumberOfState("doing")[1]})</p>
+            <p className="mb-0">
+              Doing{" "}
+              <span className="doing__text">
+                ({getNumberOfState("doing")[1]})
+              </span>
+            </p>
           </div>
           {list.map((todo, index) => {
             return (
@@ -201,7 +211,12 @@ export default function Home() {
         <div className="done col-md-4">
           <div className="title done__title">
             <div className="circle done__circle"></div>
-            <p className="mb-0">Done ({getNumberOfState("doing")[2]})</p>
+            <p className="mb-0">
+              Done{" "}
+              <span className="done__text">
+                ({getNumberOfState("doing")[2]})
+              </span>
+            </p>
           </div>
           {list.map((todo, index) => {
             return (
