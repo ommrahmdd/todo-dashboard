@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/home/home";
+import Nav from "./components/nav/nav";
+import Sidebar from "./components/sidebar/sidebar";
+// import { Provider } from "react";
+import "./App.css";
+import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./store/store/store";
 
 function App() {
+  let [activeComp, setActiveComp] = useState("Platform Launch");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Provider store={store}>
+          <div className="customApp row g-0">
+            <div className="customNav">
+              <Nav />
+            </div>
+            <div className="customSidebar d-lg-block d-none col-lg-3">
+              <Sidebar />
+            </div>
+            <div className="customComp col-lg-9 p-0 m-0">
+              <Switch>
+                <Route path="/" exact component={Home} />
+              </Switch>
+            </div>
+          </div>
+        </Provider>
+      </Router>
+    </>
   );
 }
 

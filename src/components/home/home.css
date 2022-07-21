@@ -1,0 +1,255 @@
+.home {
+  min-height: 100vh;
+  max-height: auto;
+  width: 100%;
+  background-color: var(--mainColor);
+  padding: 2rem;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem; */
+}
+.todo,
+.doing,
+.done {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.done {
+  margin-right: 0 !important;
+}
+.title {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+.title p {
+  color: var(--secondaryTextColor);
+}
+.circle {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.todo__circle {
+  background-color: rgb(159, 46, 46);
+}
+.doing__circle {
+  background-color: plum;
+}
+.done__circle {
+  background-color: rgb(135, 206, 65);
+}
+.todo__text {
+  color: rgb(159, 46, 46) !important;
+}
+.doing__text {
+  color: plum !important;
+}
+.done__text {
+  color: rgb(135, 206, 65) !important;
+}
+/* ---------------------------- HANDLE: todo */
+.box {
+  background-color: var(--secondaryColor);
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+.box h5 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  color: rgb(243, 243, 243);
+}
+.box p {
+  color: var(--secondaryTextColor);
+}
+.box:hover {
+  background-color: var(--mainColor);
+  cursor: pointer;
+}
+/* ---------------------------- HANDLE: add task */
+.addTask__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.482);
+  width: 100%;
+  height: 100%;
+}
+.addTask,
+.taskDetails {
+  height: 55rem;
+  width: 85rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background-color: var(--mainColor);
+  border-radius: 1.5rem;
+  padding: 4rem;
+  z-index: 10;
+}
+form {
+  height: 100%;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem; */
+}
+.addTask__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--whiteColor-light);
+}
+.addTask input,
+textarea {
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  border: 0.05rem dashed var(--whiteColor-light);
+  outline: none;
+  color: var(--secondaryTextColor);
+  font-size: 1.6rem;
+}
+textarea {
+  height: 50%;
+  font-size: 1.6rem !important;
+}
+
+.addTask__subtasksBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.addTask__subtasksBox input {
+  width: 80%;
+}
+.addTask__subtasksBox i {
+  font-size: 3rem;
+  color: var(--whiteColor-light);
+  cursor: pointer;
+}
+.subTaskBtn {
+  /* width: 100%; */
+  display: block;
+  padding: 1rem 2rem;
+  background-color: var(--whiteColor-light);
+  color: var(--mainColor);
+  border-radius: 1rem;
+  font-family: "Gantari";
+  margin-bottom: 2rem;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+.subTaskBtn:hover {
+  background-color: transparent;
+  color: var(--whiteColor-light);
+}
+.subTask__p {
+  color: white;
+}
+.addTask__state {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: transparent;
+  color: var(--whiteColor-light);
+  border: 0.1rem solid var(--whiteColor-light);
+  display: inline-block;
+  /* margin: 0 2rem; */
+  border-radius: 1rem;
+}
+.addTask__state option {
+  background-color: var(--mainColor);
+  padding: 2rem 0;
+  font-size: 1.4rem;
+}
+.addTask__add {
+  display: block;
+  padding: 1rem 2rem;
+  font-family: "Gantari";
+  background-color: var(--whiteColor-light);
+  border: none;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 30%;
+  transition: all 0.3s ease;
+  font-size: 1.8rem;
+}
+.addTask__add:hover {
+  background-color: transparent;
+  color: var(--whiteColor-light);
+}
+/* HANDLE: TASK Details */
+.taskDetails {
+  top: 20%;
+  height: 70rem;
+}
+.taskDetails__box {
+  margin-bottom: 2rem;
+}
+.taskDetails__box p {
+  color: var(--secondaryTextColor);
+  margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+.taskDetails__box h4 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: var(--whiteColor-light);
+}
+.taskDetails__box-changeState {
+  width: 15rem;
+  height: 10rem;
+}
+.customTable {
+  color: var(--whiteColor-light) !important;
+  font-size: 1.9rem !important;
+}
+.taskDetails select,
+.taskDetails option {
+  background-color: transparent;
+  color: var(--secondaryTextColor);
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+  .addTask,
+  .taskDetails {
+    height: auto;
+    width: 55rem;
+  }
+  .addTask__right {
+    margin-top: 10rem !important;
+  }
+}
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 7px !important;
+  }
+  .addTask {
+    height: auto;
+    width: 45rem;
+  }
+  .taskDetails {
+    top: 30%;
+    height: auto;
+    width: 42rem;
+  }
+}
