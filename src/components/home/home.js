@@ -17,6 +17,7 @@ export default function Home() {
               { subtask_title: "Sub task 2", subtask_state: "todo" },
             ],
             state: "todo",
+            date: new Date().toLocaleString(),
           },
         ]
   );
@@ -80,6 +81,7 @@ export default function Home() {
             description: descriptionRef.current.value,
             subtasks: subTasks.length > 0 ? subTasks : "",
             state: todoState,
+            date: new Date().toLocaleString(),
           },
         ];
       });
@@ -110,7 +112,13 @@ export default function Home() {
     let taskIndex = list.findIndex((todo) => todo.id == updateTask.id);
     list.splice(taskIndex, 1);
     setList((prevState) => {
-      return [...prevState, updateTask];
+      return [
+        ...prevState,
+        {
+          ...updateTask,
+          date: new Date().toLocaleString(),
+        },
+      ];
     });
     dispatch(details_action(false));
   };
@@ -156,7 +164,11 @@ export default function Home() {
                   onClick={() => handleShowTodoDetails(todo)}
                 >
                   <h5>{todo.title}</h5>
-                  <p>{todo.subtasks.length} subtasks</p>
+                  <p>({todo.subtasks.length}) Subtasks</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <p className="fs-5">Created/Updated</p>
+                    <p className="fs-6 text-light">{todo.date}</p>
+                  </div>
                 </div>
               )
             );
@@ -176,7 +188,11 @@ export default function Home() {
                   onClick={() => handleShowTodoDetails(todo)}
                 >
                   <h5>{todo.title}</h5>
-                  <p>{todo.subtasks.length} subtasks</p>
+                  <p>({todo.subtasks.length}) Subtasks</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <p className="fs-5">Created/Updated</p>
+                    <p className="fs-6 text-light">{todo.date}</p>
+                  </div>
                 </div>
               )
             );
@@ -196,7 +212,11 @@ export default function Home() {
                   onClick={() => handleShowTodoDetails(todo)}
                 >
                   <h5>{todo.title}</h5>
-                  <p>{todo.subtasks.length} subtasks</p>
+                  <p>({todo.subtasks.length}) Subtasks</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <p className="fs-5">Created/Updated</p>
+                    <p className="fs-6 text-light">{todo.date}</p>
+                  </div>
                 </div>
               )
             );
@@ -342,7 +362,7 @@ export default function Home() {
           </div>
           <div className="taskDetails__box">
             <p>Description</p>
-            <h4>{updateTask.description}</h4>
+            <h4 className="fs-3">{updateTask.description}</h4>
           </div>
           <div className="taskDetails__box">
             <p>State</p>
@@ -388,7 +408,7 @@ export default function Home() {
                 {updateTask.subtasks.length > 0 &&
                   updateTask.subtasks.map((task, index) => (
                     <tr key={index}>
-                      <td>{task.subtask_title}</td>
+                      <td className="w-75">{task.subtask_title}</td>
                       <td
                         className={`text-capitalize ${
                           task.subtask_state == "todo"
@@ -402,7 +422,7 @@ export default function Home() {
                       </td>
                       <td>
                         <select
-                          className="form-select fs-5 w-75"
+                          className="form-select fs-5"
                           onChange={(e) => handlesubTaskDetails(e, index)}
                         >
                           <option selected disabled>

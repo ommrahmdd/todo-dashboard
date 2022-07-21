@@ -36,7 +36,7 @@
   margin-right: 2rem;
 }
 .todo__circle {
-  background-color: rgb(159, 46, 46);
+  background-color: rgb(232, 87, 87);
 }
 .doing__circle {
   background-color: plum;
@@ -45,7 +45,7 @@
   background-color: rgb(135, 206, 65);
 }
 .todo__text {
-  color: rgb(159, 46, 46) !important;
+  color: rgb(232, 87, 87) !important;
 }
 .doing__text {
   color: plum !important;
@@ -60,6 +60,7 @@
   padding: 2rem;
   margin-bottom: 2rem;
   transition: all 0.3s ease;
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.74);
 }
 .box h5 {
   font-size: 2rem;
